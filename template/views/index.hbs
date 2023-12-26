@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="sass/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <a href="#" class="logo">Edhas<span>Dev.</span></a>
+
+        <div class="menu">
+            <div class="hamburger" id="hamburger">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
+            </div>
+
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <button class="btn" id="signUp-btn">Sign Up/In</button>
+
+
+    </header>
+
+    <!-- *******************modal**************************** -->
+
+    <div class="overlay" data-aos="zoom-out" >
+        <div class="modal" >
+            <div class="modal-head">
+                <div class="choice">
+                    <a href="#" id="modSignup">Sign Up</a>
+                    <a href="#" id="modLogin">Log in</a>
+                </div>
+                
+                <button id="closeModalbtn"><i class="fa-solid fa-xmark"></i></button>
+            </div><hr>
+
+            <form class="signupForm" method="POST" action="/registration">
+                {{!-- <div> --}}
+                    <label for="signupName">Name</label>
+                    <input id="signupName" type="text" name="newName"  placeholder="Full Name" autocomplete="off" maxlength="40" required>
+                {{!-- </div> --}}
+                {{!-- <div> --}}
+                    <label for="signupEmail">Email</label>
+                    <input id="signupEmail" type="email" name="newEmail"  placeholder="Enter Email" autocomplete="off" maxlength="20" required>
+                {{!-- </div> --}}
+                {{!-- <div> --}}
+                    <label for="signupPassword">Password</label>
+                    <input id="signupPassword" type="password" name="newPassword"  placeholder="Password" autocomplete="off" maxlength="15" required>
+                {{!-- </div> --}}
+                {{!-- <div> --}}
+                    <label for="signupDob">Date Of Birth</label>
+                    <input id="signupDob" type="text" name="newDob" placeholder="DD/MM/YYYY" autocomplete="off" maxlength="10" required>
+                {{!-- </div> --}}
+                {{!-- <div> --}}
+                    <input type="submit" value="Sign Up" class="send-btn-signup overlay_btn">
+                {{!-- </div> --}}
+            </form>
+
+            <!-- ****log In form****** -->
+
+            <form class="loginForm" method="POST" action="/userLogin">
+                {{!-- <div> --}}
+                    <label for="loginEmail">Email</label>
+                    <input id="loginEmail" type="email" name="userEmail"  placeholder="Enter Email" autocomplete="off" required>
+                {{!-- </div> --}}
+                {{!-- <div> --}}
+                    <label for="loginPassword">Password</label>
+                    <input id="loginPassword" type="password" name="userPassword"  placeholder="Password" autocomplete="off" required>
+                    
+                {{!-- </div> --}}
+                {{!-- <div> --}}
+                    <input type="submit" value="Log In" class="send-btn-signup overlay_btn">
+                {{!-- </div> --}}
+            </form>
+
+        </div>
+    </div>
+
+        {{!-- ***ty for message*** --}}
+
+        <div class="contactMsgOverlay">
+            <div class="CMOverlay">
+                <i class="fa-solid fa-circle-check"></i>
+                <h1>Message Received</h1>
+            </div>
+        </div>
+
+
+        <section class="home" id="home">
+
+            <div class="left" data-aos="fade-in">
+                <h4>Hi There!</h4>
+                <h1>I'm <span>Yuvraj Singh Rathore</span></h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi ipsam reprehenderit provident quo architecto qui voluptatum animi et, officia commodi tempora quae doloribus sapiente dolore? Non nisi hic ad error. I am enthusiastic web developer willing to learn in every aspect of my life.</p>
+
+                <div class="contactIcons">
+                    <a href="https://www.linkedin.com/in/yuvraj-singh-rathore-ab8b6b242/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/Yuv_03" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://t.me/Yuv_03" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+
+                <div class="homeBtn">
+                    <button class="hireBtn btn"><a href="#contact">Hire me</a></button>
+                    <button class="cvBtn btn"><a download="CV_Yuvraj" href="https://drive.google.com/uc?export=download&id=1spHQcZXbyrCazmmI0ULc6fugy4eEu9sv">Download CV</a></button>
+                </div>
+
+            </div>
+
+            <div class="right">
+                <img src="https://i.postimg.cc/vZJyn1Tj/4107714.webp" />
+            </div>
+
+        </section>
+
+        <!-- {{!-- About Page --}} -->
+
+        <section class="about" id="about">
+            <div class="about-left" data-aos="zoom-in-down">
+                <img src="https://i.postimg.cc/J75Tys4T/about.jpg" />
+            </div>
+
+            <div class="about-right" data-aos="zoom-in-up">
+                <h2>I am a <span>Web Developer</span></h2>
+                <div class="dis-about">
+                    <p class="exp">
+                        Experience : <span>Fresher</span>
+                    </p>
+                    <p class="exp">
+                        Speciality : <span>Backend</span>
+                    </p>
+                    <p class="exp">
+                        Email : <span>yuvrajrathore1203@gmail.com</span>
+                    </p>
+                    <p class="exp">
+                        Phone : <span>7976621737</span>
+                    </p>
+                    <p class="exp">
+                        Address : <span>Udaipur, Rajasthan</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service -->
+
+        <section class="service" id="service">
+
+            <div class="service-title sec-title" data-aos="fade-down">
+                <h2>
+                    My <span>Service</span>
+                </h2>
+            </div>
+
+            <div class="service-content sec-content" data-aos="zoom-in-up">
+                <div class="box">
+                    <img src="https://i.postimg.cc/Gm79PXdG/pc.png" alt="seoImgage">
+                    <h3>SEO Tatics</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, dolor aliquid debitis commodi beatae exercitationem nisi nihil. Neque itaque mollitia tempora quaerat amet, sequi illum?
+                    </p>
+                    <a href="#">Download Now <span>-></span></a>
+                </div>
+                <div class="box">
+                    <img src="https://i.postimg.cc/4y6FpsxB/webdev1.png" alt="webdev">
+                    <h3>Web Development</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, dolor aliquid debitis commodi beatae exercitationem nisi nihil. Neque itaque mollitia tempora quaerat amet, sequi illum?
+                    </p>
+                    <a href="#">Download Now <span>-></span></a>
+                </div>
+                <div class="box">
+                    <img src="https://i.postimg.cc/HnFKwDjj/technology.png" alt="openSource">
+                    <h3>Open Source</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, dolor aliquid debitis commodi beatae exercitationem nisi nihil. Neque itaque mollitia tempora quaerat amet, sequi illum?
+                    </p>
+                    <a href="#">Download Now <span>-></span></a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Portfolio -->
+
+        <section class="portfolio" id="portfolio">
+            <div class="portfolio-title sec-title" data-aos="fade-down">
+                <h2>
+                    My <span>Portfolio</span>
+                </h2>
+            </div>
+
+            <div class="portfolio-content sec-content" data-aos="zoom-in-up">
+
+                <div class="project">
+                    <img src="https://i.postimg.cc/K8TN7jD3/fb.png" />
+                    <div class="dis">
+                        <div class="dis-text">
+                            <h5>Website Design</h5>
+                        </div>
+                        <div class="dis-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                    </div>
+                    <h3>Website Development for Y</h3>
+                </div>
+
+                <div class="project">
+                    <img src="https://i.postimg.cc/vDFvCdQZ/joke.png" />
+                    <div class="dis">
+                        <div class="dis-text">
+                            <h5>Website Design</h5>
+                        </div>
+                        <div class="dis-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                    </div>
+                    <h3>Website Development for Y</h3>
+                </div>
+
+                <div class="project">
+                    <img src="https://i.postimg.cc/mkw53D3G/todo.png" />
+                    <div class="dis">
+                        <div class="dis-text">
+                            <h5>Website Design</h5>
+                        </div>
+                        <div class="dis-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                    </div>
+                    <h3>Website Development for Y</h3>
+                </div>
+
+                <div class="project">
+                    <img src="https://i.postimg.cc/L8bsSkqG/calc.png" />
+                    <div class="dis">
+                        <div class="dis-text">
+                            <h5>Website Design</h5>
+                        </div>
+                        <div class="dis-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                    </div>
+                    <h3>Website Development for Y</h3>
+                </div>
+
+                <div class="project">
+                    <img src="https://i.postimg.cc/1tLC1dP4/weather.png" />
+                    <div class="dis">
+                        <div class="dis-text">
+                            <h5>Website Design</h5>
+                        </div>
+                        <div class="dis-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                    </div>
+                    <h3>Website Development for Y</h3>
+                </div>
+
+                <div class="project">
+                    <img src="" />
+                    <div class="dis">
+                        <div class="dis-text">
+                            <h5>Website Design</h5>
+                        </div>
+                        <div class="dis-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                    </div>
+                    <h3>Website Development for Y</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Contact -->
+
+        <section class="contact" id="contact">
+            <section class="sec-title contact-title" data-aos="fade-down">
+                <h2>Contact <span>Me</span></h2>
+            </section>
+
+            <section class="contact-content" data-aos="zoom-in">
+
+                <form action="/contactmsg" method="POST">
+                    <input type="text" name="contactName" placeholder="Your name" maxlength="40" autocomplete="off" required>
+                    <input type="email" name="contactEmail" placeholder="Email" maxlength="30" autocomplete="off" required>
+                    <textarea cols="30" rows="10" maxlength="600" name="contactMessage" placeholder="Write your message here..." autocomplete="off" required></textarea>
+                    <input type="submit" value="Send Message" class="send-btn">
+                </form>
+                
+            </section>
+        </section>
+
+        <div class="footer">
+            <div class="copyright">
+                <p>2023 Yuvraj Singh Rathore, All Rights Reserved.</p>
+            </div>
+
+            <a href="#home" class="scroll-up">
+                <i class="fa-solid fa-caret-up"></i>
+            </a>
+        </div>
+       
+        <script src="script.js">
+        </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                offset: 300,
+                duration: 1500,
+            });
+        </script>
+</body>
+</html>
