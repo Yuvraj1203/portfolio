@@ -5,6 +5,7 @@ const hbs = require("hbs");
 require("./db/conn");
 const ContactMsg = require("./models/contactSch");
 const NewUser = require("./models/signupSch");
+const bcrypt = require("bcryptjs");
 
 const port = process.env.PORT || 7000;
 
@@ -36,24 +37,38 @@ app.post("/contactmsg", async(req,res)=>{
         res.status(201).render("index");
         
     } catch (error) {
-        res.status(400).send("error in saving contact message in db")
+        res.status(400).render("error",{
+            output: "Server issue"
+        })
     }
 })
 
 app.post("/registration", async(req,res)=>{
     try {
-        const SignUped = new NewUser({
-            newName : req.body.newName,
-            newEmail : req.body.newEmail,
-            newPassword : req.body.newPassword,
-            newDob : req.body.newDob
-        })
 
-        const registered = await SignUped.save();
-        res.status(201).render("index");
+        const password = req.body.newPassword;
+
+        const passHashing = async(password)=>{
+            const hashing = await bcrypt.hash(password,4);
+
+            const SignUped = new NewUser({
+                newName : req.body.newName,
+                newEmail : req.body.newEmail,
+                newPassword : hashing,
+                newDob : req.body.newDob
+            })
+    
+            const registered = await SignUped.save();
+            res.status(201).render("index");
+        }
+
+        passHashing(password);
+
 
     } catch (error) {
-        res.status(400).send("Some error in Registration")
+        res.status(400).render("error",{
+            output: "Server issue"
+        })
     }
 })
 
@@ -63,18 +78,24 @@ app.post("/userLogin", async(req,res)=>{
         const password = req.body.userPassword;
 
         const useremail = await NewUser.findOne({newEmail:email});
+        const userpass = await useremail.newPassword;
 
-        if(useremail.newPassword === password){
-            res.status(201).render("private");
-        }else{
-            res.status(400).render("invalid",{
-                output: "Password"
-            })
-        }
+        const passMatching = async(password,userpass)=>{
+            const matching = await bcrypt.compare(password,userpass);
+            
+            if(matching){
+                res.status(201).render("private");
+            }else{
+                res.status(400).render("invalid",{
+                    output: "Invalid Password"
+                })
+            }
+        }   
+        passMatching(password,userpass);     
 
     } catch (error) {
         res.status(400).render("invalid",{
-            output: "Email"
+            output: "Invalid Email"
         })
     }
 })

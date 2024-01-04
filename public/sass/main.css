@@ -339,6 +339,7 @@ header .menu .nav-list li a:hover {
   gap: 2.3rem;
 }
 .service .service-content .box {
+  text-align: center;
   border: 1px solid transparent;
   margin: 2%;
   padding: 2% 4%;
@@ -406,7 +407,10 @@ header .menu .nav-list li a:hover {
   gap: 2.3rem;
   padding-bottom: 2%;
 }
-.portfolio .portfolio-content .project {
+.portfolio .portfolio-content a {
+  color: inherit;
+}
+.portfolio .portfolio-content a .project {
   background-color: #2d343f;
   border-radius: 28px;
   border: 1px solid transparent;
@@ -415,26 +419,26 @@ header .menu .nav-list li a:hover {
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.portfolio .portfolio-content .project img {
+.portfolio .portfolio-content a .project img {
   height: 150px;
   width: 100%;
   border-radius: 28px;
   margin-bottom: 1rem;
   transition-duration: 0.5s;
 }
-.portfolio .portfolio-content .project img:hover {
+.portfolio .portfolio-content a .project img:hover {
   transform: translateY(-5px);
 }
-.portfolio .portfolio-content .project .dis {
+.portfolio .portfolio-content a .project .dis {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.5rem;
 }
-.portfolio .portfolio-content .project .dis .dis-text {
+.portfolio .portfolio-content a .project .dis .dis-text {
   color: #9A9DA4;
 }
-.portfolio .portfolio-content .project .dis .dis-icon {
+.portfolio .portfolio-content a .project .dis .dis-icon {
   color: #fff;
   background-color: #075fe4;
   border-radius: 50%;
@@ -588,6 +592,10 @@ span {
   .sec-title h2 {
     font-size: 2rem;
   }
+  .invalid img {
+    height: 400px;
+    width: 400px;
+  }
 }
 @media (max-width: 855px) {
   .home .left h4 {
@@ -732,6 +740,10 @@ span {
     height: 15px;
     font-size: x-small;
   }
+  .invalid img {
+    height: 200px;
+    width: 200px;
+  }
 }
 @media (max-width: 395px) {
   header .logo {
@@ -755,4 +767,11 @@ span {
   .home .right img {
     height: 150px;
   }
+}
+.invalid {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */

@@ -384,6 +384,7 @@ header{
         gap: 2.3rem;
 
         .box{
+            text-align: center;
             border: 1px solid transparent;
             margin: 2% ;
             padding: 2% 4%;
@@ -464,7 +465,10 @@ header{
         gap: 2.3rem;
         padding-bottom: 2%;
 
-        .project{
+        a{
+            color: inherit;
+
+         .project{
             background-color: $thirdbg;
             border-radius: 28px;
             border: 1px solid transparent;
@@ -502,6 +506,7 @@ header{
                     padding: 1% 2%;
                 }
             }
+         }
         }
     }
 
@@ -683,6 +688,12 @@ span{
     .sec-title{
         h2{
             font-size: 2rem;
+        }
+    }
+    .invalid{
+        img{
+            height: 400px;
+            width: 400px;
         }
     }
 }
@@ -904,6 +915,12 @@ span{
             font-size: x-small;
         }
     }
+    .invalid{
+        img{
+            height: 200px;
+            width: 200px;
+        }
+    }
 
 }
 
@@ -941,4 +958,14 @@ span{
             }
         }
     }
+}
+
+//invalid page
+
+.invalid{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
