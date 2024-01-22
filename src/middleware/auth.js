@@ -4,8 +4,12 @@ const NewUser = require("../models/signupSch");
 const auth = async(req,res, next) =>{
     try {
         const token = req.cookies.jwt;
-        const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
-        console.log(verifyUser);
+        try {
+            const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+            console.log(verifyUser);
+        } catch (error) {
+            console.error(`error inn verification : ${error}`)
+        }
 
         const user = await NewUser.findOne({_id:verifyUser.id})
         console.log(user);
