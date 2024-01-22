@@ -97,12 +97,9 @@ app.post("/registration", async(req,res)=>{
             const token = await SignUped.getToken();
             console.log(`token while sign up : ${token}`)
 
-            res.cookie("jwt",token,{
-                expires : new Date(Date.now() + (60 * 1000)),
-                httpOnly: true
-            })
+            res.cookie("jwt",token)
     
-            const registered = await SignUped.save();
+            await SignUped.save();
             res.status(201).render("index");
         }
 
